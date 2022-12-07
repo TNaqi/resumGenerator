@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-cv.css">
+  <script defer src="index.js"></script>
+  <title>Resume Generetor</title>
+</head>
+
+<body lang="ar" dir="rtl">
+  <form id="Resume1" class="Resume" lang="ar" dir="rtl">
+    <div class="text-center padding-20">
+      <h1>إصنع سيرتك الذاتيه</h1>
+    </div>
+    <div class="resume-body padding-20">
+      <div class="personal-info">
+        <h2>معلومات شخصية</h2>
+        <div class="form-group">
+          <label for="fullname">الإسم الكامل</label>
+          <input id="fullName" class="form-control" type="text" name="fullname">
+        </div>
+        <div class="form-group">
+          <label for="email">الإميل</label>
+          <input id="email" type="email" class="form-control" name="email">
+        </div>
+        <div class="form-group">
+          <label for="phone">رقم الجوال</label>
+          <input id="phoneNumber" class="form-control" type="tel" name="phone">
+        </div>
+        <div class="form-group">
+          <label for="birthday">تاريخ الميلاد</label>
+          <input id="birthday" class="form-control" type="date" name="birthday">
+        </div>
+        <!-- <div class="form-group">
+          <label for="address">مكان الإقامة</label>
+          <input class="form-control" type="text" name="address">
+        </div> -->
+        <!-- <div class="form-group">
+          <label for="website">موقعك الشخصي</label>
+          <input class="form-control" type="url" name="website">
+        </div> -->
+        <div class="form-group">
+          <label for="linkedin">lenkedIn</label>
+          <input id="linkedin" class="form-control" type="url" name="linkedin">
+        </div>
+      </div>
+      <div>
+        <h2>معلومات أكاديمية</h2>
+        <div class="form-group">
+          <label for="aboutme">نبذه</label>
+          <textarea id="aboutme" class="form-control" name="aboutme" cols="30" rows="4"></textarea>
+        </div>
+        <div>
+          <div class="form-group div-add-exp" id="expGroup">
+            <h5 class="text-right">الخبرات</h5>
+            <div>
+              <label for="experience">خبرات العمل</label>
+              <textarea id="experience" class="form-control experiencesTextarea" name="experience" cols="30" rows="4"></textarea>
+            </div>
+            <div>
+              <label for="experDate">تاريخ الخبرة</label>
+              <input id="experDate" class="form-control experiencesDate" type="date" name="experDate">
+            </div>
+            <button id="btn-del-exp" class="btn btn-danger btn-del-exp">حذف</button>
+          </div>
+          <button id="btn-add-exp" class="btn btn-secondary btn-add-exp">أضف</button>
+        </div>
+        <div>
+          <div class="form-group">
+            <label for="edu">التعليم</label>
+            <div>
+              <label for="eduType">الدرجة العلمية</label>
+              <select id="eduType" class="form-control form-control" name="eduType">
+                <option value="ثانوي">ثانوي</option>
+                <option value="دبلوم">دبلوم</option>
+                <option value="بكالوريوس">بكالوريوس</option>
+              </select>
+            </div>
+            <div>
+              <label for="eduSp">التخصص</label>
+              <input id="eduSp" class="form-control" type="text" name="eduSp">
+            </div>
+            <div>
+              <label for="eduPlace">اسم مكان التعليم</label>
+              <input id="eduPlace" class="form-control" type="text" name="eduPlace">
+            </div>
+            <div>
+              <label for="eduDate">تاريخ الشهادة</label>
+              <input id="eduDate" class="form-control" type="date" name="eduDate">
+            </div>
+            <div>
+              <label for="gpaOption">اختر نوع المعدل</label>
+              <select id="gpa" class="form-control form-control-sm gpa-size" name="gpaOption" onChange="CheckGPA(this)"
+                required>
+                <option value="100">%100</option>
+                <option value="5">5/5</option>
+                <option value="4">4/4</option>
+              </select>
+              <input id="gbainput" class="form-control form-control-sm gpa-size" type="number" max="100" min="0"
+                required>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2>معلومات عامه</h2>
+
+
+
+        <div>
+          <div class="form-group" id="courseGroup">
+            <h5 class="text-right">الدورات</h5>
+            <div>
+              <label for="course">الدورة</label>
+              <input class="form-control coursesInp" name="course"></input>
+            </div>
+            <div>
+              <label for="courseDate">تاريخ الدورة</label>
+              <input class="form-control courseDate" type="date" name="courseDate">
+            </div>
+            <button id="btn-del-course" class="btn btn-danger">حذف</button>
+          </div>
+          <button id="btn-add-course" class="btn btn-secondary">أضف</button>
+        </div>
+
+
+
+        <div>
+          <div class="form-group" id="skillGroup">
+            <label for="skill">المهارات</label>
+            <input class="form-control skills" type="text" name="skill">
+            <button id="btn-del-skill" class="btn btn-danger">حذف</button>
+          </div>
+          <button id="btn-add-skill" class="btn btn-secondary">أضف</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <button id="generateCV" class="btn btn-primary btn-lg btn-block">انشاء الـCV</button>
+
+
+  <div id="Resume2" class="container text-right display-none" dir="rtl" lang="ar">
+    <div class="border-remove"></div>
+    <!-- <div class="page-number">صفحة 1/2</div> -->
+    <br>
+    <div class="mt-5 mx-4 py-3 px-5 cv-header">
+      <h1 class="mb-5" id="myName"></h1>
+      <p><b>رقمي:</b> <span id="myPhoneNumer"></span></p>
+      <p><b>ايميلي:</b> <span id="myEmail"></span></p>
+      <!-- <p><b>موقعي:</b> http://iowjfmksd.com</p> -->
+      <p><b>لينكد إن:</b> <span id="myLinkedIn"></span></p>
+    </div>
+    <div class="cv-body mt-5">
+      <div class="row d-flex align-items-center p-3 mb-3 border-b">
+        <h4 class="col-4">نبذه</h4>
+        <p id="theAbout" class="col-8 color-p"></p>
+      </div>
+      <div class="row d-flex align-items-center p-3 mb-3 border-b">
+        <h4 class="col-4">التعليم</h4>
+        <ul class="col-8">
+          <li>
+            <div class="row align-items-center">
+              <div id="theEdu" class="col-9"></div>
+              <div id="myEduDate" class="col-2 text-center"></div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+      <div class="row d-flex align-items-center p-3 mb-3 border-b">
+        <h4 class="col-4">الخبرات</h4>
+        <ul id="theExperience" class="col-8">
+        </ul>
+      </div>
+      <div class="row d-flex align-items-center p-3 mb-3 border-b">
+        <h4 class="col-4">الدورات</h4>
+        <ul id="theCourse" class="col-8">
+        </ul>
+      </div>
+      <div class="row d-flex align-items-center p-3 mb-3">
+        <h4 class="col-4">المهارات</h4>
+        <ul id="theSkill" class="col-8">
+        </ul>
+      </div>
+    </div>
+  </div>
+  <button id="showCV" class="btn btn-primary btn-block btn-lg my-5 display-none">اطبع الـCV</button>
+
+</body>
+
+</html>

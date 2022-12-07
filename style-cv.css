@@ -1,0 +1,122 @@
+:root{
+  /* colors */
+  --BGCOLOR: #fff;
+  --BGCOLOR-HEADER: #f0f5fb;
+  --COLOR-NAME: rgb(46, 116, 181);
+  --COLOR-SECONDARY: rgb(48, 53, 120);
+  --COLOR-SECONDARY-l: rgb(172, 185, 202);
+  --COLOR-P: rgb(132, 150, 176);
+
+  /* fonts */
+  /* --F-NAME: 30px;
+  --F-HEADER: 12px;
+  --F-H: 14px;
+  --F-P: 11px; */
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--BGCOLOR);
+  /* font: 12pt "Tahoma"; */
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.display-none{
+  display: none;
+}
+
+
+.container {
+  width: 21cm;
+  min-height: 29.7cm;
+  margin: 1cm auto;
+  border: 1px #D3D3D3 solid;
+  border-radius: 5px;
+  background-color: var(--BGCOLOR);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  
+}
+
+.cv-header{
+  background-color: #f0f5fb;
+}
+
+#myName{
+  color: var(--COLOR-NAME);
+}
+.cv-header p{
+  line-height: 10px;
+  color: var(--COLOR-SECONDARY);
+}
+
+.cv-body{
+  position: relative;
+  padding: 0 2cm;
+}
+
+.color-p{
+  color: var(--COLOR-P);
+  font-weight: bold;
+}
+
+h4{
+  color: var(--COLOR-SECONDARY);
+}
+
+.color-light{
+  color: var(--COLOR-SECONDARY-l);
+  display: block;
+  font-weight: 400;
+}
+
+li{
+  list-style-type: "-";
+  padding-right: 20px;
+  color: var(--COLOR-P);
+  font-weight: bold;
+}
+
+.border-b{
+  border-bottom: 2px solid var(--COLOR-SECONDARY);
+  
+}
+.border-remove{
+  border-bottom: 25px solid var(--BGCOLOR);
+  position: absolute;
+  width: 600px;
+  transform: rotate(90deg);
+  right: -80px;
+  top: 650px;
+  z-index: 1;
+}
+
+.page-number{
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  .container {
+    margin: 0;
+    border: initial;
+    border-radius: initial;
+    width: initial;
+    min-height: initial;
+    box-shadow: initial;
+    background: initial;
+    page-break-after: always;
+  }
+}
